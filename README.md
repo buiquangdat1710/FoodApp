@@ -41,9 +41,29 @@ Ensure you have the following installed on your machine:
    ```bash
    git clone https://github.com/buiquangdat1710/FoodApp.git
    cd mysite
+   ```
 2. **Set up a virtual environment**:
   ```bash
   python3 -m venv env
   source env/bin/activate
+  ```
 
 3. **Install dependencies**:
+```bash
+pip install -r requirements.txt
+```
+
+4. **Set up the database:**
+```bash
+python manage.py migrate
+```
+5. **Create a superuser for the admin panel:**
+```bash
+python manage.py createsuperuser
+```
+6. **Run the development server:**
+```bash
+python manage.py runserver
+```
+7. **Access the application:**
+8. Open a web browser and go to *http://127.0.0.1:8000*.
