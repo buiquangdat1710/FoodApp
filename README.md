@@ -67,3 +67,49 @@ python manage.py runserver
 ```
 7. **Access the application:**
 8. Open a web browser and go to *http://127.0.0.1:8000*.
+
+## Usage
+
+### User Guide
+
+1. **Registration and Login**:
+   - Go to the registration page to create an account.
+   - Once registered, log in to start exploring the food items available.
+
+2. **Browse Food Items**:
+   - View a list of available foods and recipes.
+   - Use the search function to find specific dishes.
+
+3. **Add to Cart and Place Order**:
+   - Add items to your cart.
+   - Review the items in your cart and place your order.
+
+4. **Admin Panel**:
+   - Visit `http://127.0.0.1:8000/admin` to access the admin panel.
+   - Log in with the superuser credentials created during setup.
+   - From the admin panel, you can manage food items, orders, and user accounts.
+
+## Credits
+
+- **Django** - [Django](https://www.djangoproject.com/) is a high-level Python web framework that encourages rapid development and clean, pragmatic design.
+- **Font Awesome** - Icons used in the project are from [Font Awesome](https://fontawesome.com/).
+- **Other Contributors** - Thanks to everyone who contributed to this project.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Badges
+
+![Django](https://img.shields.io/badge/Django-3.x-brightgreen)
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+## Contributing
+
+We welcome contributions! Please follow these steps to contribute to the project:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix:
+   ```bash
+   git checkout -b feature-name
