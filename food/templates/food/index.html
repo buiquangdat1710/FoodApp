@@ -1,0 +1,31 @@
+{% extends 'food/base.html' %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Thực đơn của chúng tôi</h1>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        {% for item in item_list %}
+        <div class="col">
+            <div class="card h-100 hover-effect">
+                <div class="card-body">
+                    <div class="food-image mb-3">
+                        {% if item.item_image %}
+                            <img src="{{ item.item_image }}" class="img-fluid" alt="{{ item.item_name }}">
+                        {% else %}
+                            <div class="food-icon">
+                                <i class="fas fa-utensils fa-4x"></i>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <h3 class="card-title">{{ item.item_name }}</h3>
+                    <p class="card-text">{{ item.item_desc }}</p>
+                    <p class="card-text"><strong>Giá: </strong><span class="text-primary">${{ item.item_price }}</span></p>
+                    <p class="card-text"><small class="text-muted">Đầu bếp: {{ item.user_name }}</small></p>
+                    <a href="{% url 'food:detail' item.id %}" class="btn btn-custom mt-2">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

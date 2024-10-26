@@ -1,0 +1,38 @@
+{% extends 'food/base.html' %}
+{% block body %}
+
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="row g-0">
+            <div class="col-md-6">
+                <div class="food-image h-100">
+                    {% if item.item_image %}
+                        <img src="{{ item.item_image }}" class="img-fluid rounded-start h-100 w-100 object-fit-cover" alt="{{ item.item_name }}">
+                    {% else %}
+                        <div class="food-icon d-flex justify-content-center align-items-center h-100">
+                            <i class="fas fa-utensils fa-5x text-muted"></i>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card-body d-flex flex-column h-100 p-5">
+                    <h1 class="card-title display-4 mb-3">{{ object.item_name }}</h1>
+                    <p class="card-text lead mb-4">{{ object.item_desc }}</p>
+                    <h3 class="card-text mb-4">
+                        <span class="badge bg-primary rounded-pill p-3">
+                            <i class="fas fa-tag me-2"></i>{{ object.item_price }} USD
+                        </span>
+                    </h3>
+                    <div class="mt-auto">
+                        <a href="{% url 'food:delete_item' item.id %}" class="btn btn-danger btn-lg">
+                            <i class="fas fa-trash-alt me-2"></i>Xóa món ăn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

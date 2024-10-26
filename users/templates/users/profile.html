@@ -1,0 +1,134 @@
+{% extends 'food/base.html' %}
+{% load static %}
+
+{% block body %}
+<div class="profile-container">
+    <div class="profile-card">
+        <div class="profile-header">
+            <div class="profile-image">
+                <img src="{{ user.profile.image.url }}" alt="{{ user.username }}">
+            </div>
+            <h1 class="profile-name">{{ user.username }}</h1>
+        </div>
+        <div class="profile-info">
+            <p><i class="fas fa-envelope"></i> {{ user.email }}</p>
+            <p><i class="fas fa-calendar-alt"></i> Tham gia từ: {{ user.date_joined|date:"d/m/Y" }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .profile-container {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .profile-card {
+        background-color: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .profile-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .profile-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #ffffff;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 20px;
+        border: 5px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .profile-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .profile-name {
+        font-size: 28px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .profile-info {
+        padding: 30px;
+    }
+
+    .profile-info p {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        color: #333;
+        font-size: 16px;
+    }
+
+    .profile-info i {
+        margin-right: 10px;
+        color: #667eea;
+        font-size: 20px;
+    }
+
+    .profile-actions {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 30px 30px;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .btn i {
+        margin-right: 8px;
+    }
+
+    .btn-primary {
+        background-color: #667eea;
+        color: #ffffff;
+    }
+
+    .btn-secondary {
+        background-color: #f0f0f0;
+        color: #333;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+</style>
+{% endblock %}
